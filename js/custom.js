@@ -51,7 +51,7 @@
       $("<option />", {
          "selected": "selected",
          "value"   : "",
-         "text"    : "-- Table of Content --"
+         "text"    : "-- Menu --"
       }).appendTo("nav select");
       // Populate dropdown with menu items
       $("nav a").each(function() {
@@ -83,3 +83,35 @@
 */
 
 //Add your scripts here
+//Generic function to scroll page
+$(function(){
+  $('a[href*=#]').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var $target = $(this.hash);
+      $target = $target.length && $target || $('[name=' + this.hash.slice(1) +']');
+      if ($target.length) {
+        var targetOffset = $target.offset().top;
+        $('html,body').animate({scrollTop: targetOffset}, 1000);     
+        return false;         
+      }
+    }
+  });  
+});
+
+
+  // Ajusta o menu, sempre visivel
+    var fixamenu = $('.fix').offset().top+60;
+    $(window).scroll(function(){
+      if( $(window).scrollTop() > fixamenu) {
+          $('.navigation').css({position: 'fixed', top: '0px', zIndex: '6000'});
+            // Nao fixa a barra se for dispositivo movel
+            if(window.innerWidth < 650){
+                $('.navigation').css({position: 'static', top: '0px'});
+            }
+            // Nao fixa a barra se for dispositivo movel
+      } else {
+          $('.navigation').css({position: 'static', top: '0px'});
+      }
+    });
+
+

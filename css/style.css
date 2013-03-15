@@ -11,10 +11,14 @@ a:hover {text-decoration: none}
 a:focus {outline: thin dotted}
 a:hover, a:active {outline: none;}
 
+strong {
+	font-weight: 600;
+}
+
 h1 {
 	font-size: 1.5em;
 	font-weight: bold;
-	margin: 15px auto;
+	margin: 25px auto;
 }
 p {
 	margin: 10px auto;
@@ -23,11 +27,12 @@ header {
 
 }
 
-.container {
+.wrapper {
 	background-color: #fff;
 	-webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, inset rgba(0, 0, 0, 0.2) 0px -1px 2px;
    -moz-box-shadow: rgba(0,0,0,0.2) 0px 2px 10px, inset rgba(0,0,0,0.2) 0px -1px 2px;
    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, inset rgba(0, 0, 0, 0.2) 0px -1px 2px;
+   display: inline-block;
 }
 
 .logoDevfest {
@@ -102,9 +107,10 @@ header {
 	position: relative;
 	top:-6px;
 	padding-top: 15px;
+	padding-bottom: 15px;
 	font-family: 'Corben', cursive;
 	background: #C3E9FB url('../images/flowers_bg.png') repeat-y 50% 50%;
-	min-height: 250px;
+	min-height: 265px;
 }
 .circle {
 	background-color: #383838;
@@ -119,7 +125,59 @@ nav {
 	float: left;
 	display: block;
 	width: 100%;
+	background-color: #4D90FE;
+	background-image: -webkit-gradient(linear,left top,left bottom,from(#4D90FE),to(#4787ED));
+	background-image: -webkit-linear-gradient(top,#4D90FE,#4787ED);
+	background-image: -moz-linear-gradient(top,#4D90FE,#4787ED);
+	background-image: -ms-linear-gradient(top,#4D90FE,#4787ED);
+	background-image: -o-linear-gradient(top,#4D90FE,#4787ED);
+	background-image: linear-gradient(top,#4D90FE,#4787ED);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#4d90fe',EndColorStr='#4787ed');
+	border: 1px solid #3079ED;
+	min-height: 50px;
+	border-radius: 6px;
+	color:#fff;
+}
+select {
+	min-height: 40px;
+	width: 100%;
+	text-align: center;
+	border-width: none;
+	font-size: 1.1em;
+	border-radius: 10px;
+}
+.navigation {
 
+	margin-bottom: 20px;
+}
+.navigation ul {
+	margin: 12px auto;
+	text-align: center;
+	width: 100%;
+}
+
+.navigation li {
+	font-size: 1.3em;
+	font-weight: 600;
+}
+.navigation li:first-child {
+	float: left;
+	margin-left: 10%;
+}
+.navigation li:nth-child(2) {
+	text-align: center;
+	margin-left: 10%;
+}
+.navigation li:last-child {
+	float: right;
+	margin-right: 10%;
+}
+.navigation a {
+	color:#fff;
+}
+.navigation a:hover {
+	color:#fff;
+	text-shadow: -2px 3px 3px rgba(0, 0, 0, 0.6);
 }
 
 .about {
@@ -142,16 +200,27 @@ nav {
 
 }
 .map {
+	margin-top: 65px;
+	min-height: 300px;
 
 }
 .schedule {
+	margin-top: 25px;
+	float: left;
+	width: 100%;
+	padding-bottom: 60px;
+	display: block;
 
 }
 .sponsor {
 
 }
 
-
+footer {
+	float: left;
+	width: 100%;
+	margin-left: 10px;
+}
 
 .ch-grid{margin:20px 0 0 0;padding:0;list-style:none;display:block;text-align:center;width:100%;}
 .ch-grid:after,
@@ -165,9 +234,9 @@ inset 0 0 3px rgba(115,114, 23, 0.8);}
 .ch-info{position:absolute;width:200px;height:200px;border-radius:50%;-moz-transition:all 0.4s ease-in-out;-moz-transform-style:preserve-3d;-webkit-transition:all 0.4s ease-in-out;-webkit-transform-style:preserve-3d;transition:all 0.4s ease-in-out;transform-style:preserve-3d;}
 .ch-info > div{display:block;position:absolute;width:100%;height:100%;border-radius:50%;background-position:center center;-moz-backface-visibility:hidden;-webkit-backface-visibility:hidden;backface-visibility:hidden;}
 .ch-info .ch-info-back{-moz-transform:rotate3d(0,1,0,180deg);-webkit-transform:rotate3d(0,1,0,180deg);transform:rotate3d(0,1,0,180deg);background:#C40BAD;}
-.ch-info h3{color:#fff;text-transform:uppercase;letter-spacing:2px;font-size:16px;margin:0 15px;padding:40px 0 0 0;height:40px;font-family:'amatic', Arial, sans-serif;text-shadow:0 0 1px #fff,
+.ch-info h3{color:#fff;text-transform:uppercase;letter-spacing:2px;font-size:16px;margin:0 15px;padding:40px 0 0 0;height:50px;font-family:'amatic', Arial, sans-serif;text-shadow:0 0 1px #fff,
 0 1px 2px rgba(0,0,0,0.3);font-weight:normal;}
-.ch-info p{color:#fff;padding:10px 5px;font-style:italic;margin:0 30px;font-size:12px;border-top:1px solid rgba(255,255,255,0.5); text-align: center;}
+.ch-info p{color:#fff;padding:10px 5px;font-style:italic;margin:0 30px;font-size:1em;border-top:1px solid rgba(255,255,255,0.5); text-align: center;}
 .ch-info p a{display:block;color:rgba(255,255,255,0.7);font-style:normal;font-weight:700;text-transform:uppercase;font-size:10px;letter-spacing:1px;padding-top:6px;font-family:'questrial',arial,sans-serif;}
 .ch-info p a:hover{color:rgba(30, 255, 255, 0.8);}
 .ch-item:hover .ch-info-wrap,
@@ -197,6 +266,46 @@ inset 0 0 3px rgba(115,114, 23, 0.8);}
 
 
 
+
+/* Custom sizes
+============================================================================================== */
+@media screen and (max-width: 480px) {
+ /* Add your styles for devices with a maximum width of 480 */
+  body {
+  	background-color: #fff;
+  }
+  nav {
+  	background-color: #fff;
+	background-image: none;
+	border: none;
+  }
+  .subscribe {
+  	width: 300px;
+  	margin: 0 auto;
+  }
+  .date {
+  	display: block;
+  	clear: both;
+  	top: 40px;
+	margin-bottom: 30px;
+	right: 81px;
+	font-size: 45px;
+	line-height: 50px;
+
+  }
+}
+
+@media screen and (max-width: 768px) {
+ /* Add your styles for devices with a maximum width of 768 */
+}
+
+@media screen and (max-width: 320px) {
+ /* Add your styles for devices with a maximum width of 320 */
+}
+
+@media screen and (max-width: 1024px) {
+ /* Add your styles for devices with a maximum width of 1024 */
+}
 
 
 

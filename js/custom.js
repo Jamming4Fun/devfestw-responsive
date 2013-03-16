@@ -100,7 +100,7 @@ $(function(){
 
 
   // Ajusta o menu, sempre visivel
-    var fixamenu = $('.fix').offset().top+60;
+    var fixamenu = $('.fix').offset().top+10;
     $(window).scroll(function(){
       if( $(window).scrollTop() > fixamenu) {
           $('.navigation').css({position: 'fixed', top: '0px', zIndex: '6000'});

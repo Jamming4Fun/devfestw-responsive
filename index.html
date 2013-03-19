@@ -8,7 +8,7 @@
 	<meta name="keywords" content="Your keywords" />
 <!-- Optimized mobile viewport -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/>
-  <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
   
 	<link rel="shortcut icon" href="images/favicon.ico">
 	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
@@ -16,12 +16,16 @@
 	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
 <!-- CSS -->
 	<link rel="stylesheet" type="text/css" media="all" href="css/responsiveboilerplate.css" />
-  <link rel="stylesheet" type="text/css" media="all" href="css/style.css" /> 
+    <link rel="stylesheet" type="text/css" media="all" href="css/style.css" /> 
 	
 <!-- HTML5 IE Enabling Script -->
 <!--[if lt IE 9]><script src="js/html5.js"></script>
 <![endif]-->
 <link href='http://fonts.googleapis.com/css?family=Corben|Open+Sans:400,700' rel='stylesheet' type='text/css'>
+
+<script type="text/javascript" 
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC574UMZjRE37lvBVkhUhUVDkxDRVLYtGc&sensor=false">
+</script>
 
 </head>
 <body>
@@ -61,7 +65,7 @@
           <li>
             <div class="ch-item">       
               <div class="ch-info">
-                <div class="ch-info-front ch-img-1"></div>
+                <div class="ch-info-front ch-img-1">&nbsp;</div>
                 <div class="ch-info-back">
                   <a href="http://pt.wikipedia.org/wiki/Ada_Lovelace" target="_blank">Ada Lovelace</a>
                 </div>  
@@ -71,7 +75,7 @@
           <li>
             <div class="ch-item">
               <div class="ch-info">
-                <div class="ch-info-front ch-img-2"></div>
+                <div class="ch-info-front ch-img-2">&nbsp;</div>
                 <div class="ch-info-back">
                   <a href="http://gracehopper.org/2013/" target="_blank">Grace Hooper</a>
                 </div>
@@ -81,7 +85,7 @@
           <li>
             <div class="ch-item">
              <div class="ch-info">
-                <div class="ch-info-front ch-img-3"></div>
+                <div class="ch-info-front ch-img-3">&nbsp;</div>
                 <div class="ch-info-back">
                   <a href="http://anitaborg.org/" target="_blank">Anita Borg</a>
                 </div>
@@ -91,7 +95,7 @@
           <li>
             <div class="ch-item">
               <div class="ch-info">
-                <div class="ch-info-front ch-img-4"></div>
+                <div class="ch-info-front ch-img-4">&nbsp;</div>
                <div class="ch-info-back">
                  <a href="http://en.wikipedia.org/wiki/Shafi_Goldwasser" target="_blank">Shafi Goldwasser</a>
                 </div>
@@ -104,22 +108,19 @@
         <div class="droidFooter"><img src="images/droid_feet.png" alt=""></div>
       </div>
       
-      <div class="clear"></div>
-      
-    
-        <div class="fix">
+      <div class="clear">&nbsp;</div>
+
+        <div  class="fix">
           <nav class="navigation">
             <ul>
-              <li><a href="#about">Sobre</a></li>
-              <li><a href="#schedule">Programação</a></li>
-              <li><a href="https://docs.google.com/forms/d/1WduKyT9xgX1SuShA0wxPxT-iEH0uEMAnbRCSv7tXwO8/viewform" target="_blank">Envie sua atividade</a></li>
+              <li><span id="aboutLink">Sobre o Evento</span></li>
+              <li><span id="scheduleLink" >Programação</span></li>
+              <li><a id="activityLink" href="https://docs.google.com/forms/d/1WduKyT9xgX1SuShA0wxPxT-iEH0uEMAnbRCSv7tXwO8/viewform" target="_blank">Envie sua atividade</a></li>
             </ul>
           </nav>
         </div>
-        
- 
-      <div class="clear"></div>
-    
+      <div id="clearAbout" class="clear">&nbsp;</div>
+      
       <div class="about" id="about">
         <div class="col6">
           <h1>O que é um DevFestW?</h1>
@@ -142,8 +143,7 @@
           
         </div>
       </div>
-    
-      <div class="clear"></div>
+      <div class="clear">&nbsp;</div>
 
     <div class="local">
       <div class="col6">
@@ -155,26 +155,42 @@
       </div>
       <div class="col6">
         <div class="map">
-            
+            <div id="map_canvas" style="width:451px; height:250px"></div>
         </div>
       </div>
     </div>
+    <div id="clearSchedule" class="clear">&nbsp;</div>
     
-
-    <div class="clear"></div>
-
     <div class="schedule" id="schedule">
       <div class="col8">
         <h1>Programação</h1>
-        <ul>
-          <li><strong>18:30</strong>  // Credenciamento</li>
-          <li><strong>19:00 - 20:00</strong> // Abertura e Keynote</li>
-          <li><strong>20:00 - 20:30</strong> // Atividade proposta por membros</li>
-          <li><strong>20:30 - 21:30</strong> // Palestra Android</li>
-          <li><strong>21:30 - 22:00</strong> // Atividade proposta por membros</li>
-          <li><strong>22:00</strong> // Em diante Pizza</li>
-        </ul>
-        <p>Em breve informaremos o conteúdo de cada atividade. Programação sujeita a alterações.</p>
+        <table width="90%">
+            <tr>
+                <td class="time">18:30</td>
+                <td class="description">Credenciamento</td>
+            </tr>
+            <tr>
+                <td class="time">19:00 - 20:00</td>
+                <td class="description">Abertura e Keynote</td>
+            </tr>
+            <tr>
+                <td class="time">20:00 - 20:30</td>
+                <td class="description">Atividade proposta por membros</td>
+            </tr>
+            <tr>
+                <td class="time">20:30 - 21:30</td>
+                <td class="description">Palestra Android</td>
+            </tr>
+            <tr>
+                <td class="time">21:30 - 22:00</td>
+                <td class="description">Atividade proposta por membros</td>
+            </tr>
+            <tr>
+                <td class="time">22:00 em diante</td>
+                <td class="description">Pizza</td>
+            </tr>
+        </table>
+        <p>Em breve informaremos o conteúdo de cada atividade. <strong>Programação sujeita a alterações.</strong></p>
 
         
       </div>
@@ -187,7 +203,7 @@
       
     </div>
     
-    <div class="clear"></div>
+    <div class="clear">&nbsp;</div>
 
     <footer>
       <div class="col12">
@@ -200,26 +216,38 @@
 
 <!-- JavaScript at the bottom for fast page loading with just one js file -->
 	<script src="js/head.min.js"></script>
-        <script>
-           	head.js("js/jquery.min.js", "js/respond.min.js", "js/custom.js" , function(){
+    <script>
+       	head.js("js/jquery.min.js", "js/respond.min.js", "js/custom.js" , function(){
 
-             
+         
 
-            });
-        </script>
+        });
+    </script>
+    
+    <script>
+    //IE outdate friendly warning if you don't want remove it
+    	var $buoop = {vs:{i:8,f:3.6,o:10.6,s:3.2,n:9}} 
+			$buoop.ol = window.onload; 
+			window.onload=function(){ 
+			 try {if ($buoop.ol) $buoop.ol();}catch (e) {} 
+			 var e = document.createElement("script"); 
+			 e.setAttribute("type", "text/javascript"); 
+			 e.setAttribute("src", "http://browser-update.org/update.js"); 
+			 document.body.appendChild(e); 
+			} 
+    </script>
+    <script type="text/javascript">
 
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-39234533-1']);
+          _gaq.push(['_trackPageview']);
         
-        <script>
-        //IE outdate friendly warning if you don't want remove it
-        	var $buoop = {vs:{i:8,f:3.6,o:10.6,s:3.2,n:9}} 
-    			$buoop.ol = window.onload; 
-    			window.onload=function(){ 
-    			 try {if ($buoop.ol) $buoop.ol();}catch (e) {} 
-    			 var e = document.createElement("script"); 
-    			 e.setAttribute("type", "text/javascript"); 
-    			 e.setAttribute("src", "http://browser-update.org/update.js"); 
-    			 document.body.appendChild(e); 
-    			} 
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+        
         </script>
 </body>
 </html>

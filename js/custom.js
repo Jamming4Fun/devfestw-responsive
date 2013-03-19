@@ -82,7 +82,7 @@
 
 */
 
-//Add your scripts here
+/*//Add your scripts here
 //Generic function to scroll page
 $(function(){
   $('a[href*=#]').click(function() {
@@ -96,22 +96,86 @@ $(function(){
       }
     }
   });  
+});*/
+
+
+// Ajusta o menu, sempre visivel
+var fixamenu = $('.fix').offset().top;
+var navbarWidth = $('.wrapper').width();
+$(window).scroll(function(){
+  if( $(window).scrollTop() > fixamenu) {
+      $('.navigation').css({position: 'fixed', width: navbarWidth+'px', top: '0px', zIndex: '99'});
+        // Nao fixa a barra se for dispositivo movel
+        if(window.innerWidth < 650){
+            $('.navigation').css({position: 'static', top: '0px'});
+        }
+        // Nao fixa a barra se for dispositivo movel
+  } else {
+      $('.navigation').css({position: 'static', top: '0px'});
+  }
 });
 
 
-  // Ajusta o menu, sempre visivel
-    var fixamenu = $('.fix').offset().top+10;
-    $(window).scroll(function(){
-      if( $(window).scrollTop() > fixamenu) {
-          $('.navigation').css({position: 'fixed', top: '0px', zIndex: '6000'});
-            // Nao fixa a barra se for dispositivo movel
-            if(window.innerWidth < 650){
-                $('.navigation').css({position: 'static', top: '0px'});
-            }
-            // Nao fixa a barra se for dispositivo movel
-      } else {
-          $('.navigation').css({position: 'static', top: '0px'});
-      }
-    });
+
+//Window Dimensions
+var wh = $(window).height();
+var ww = $(window).width();
+var offset = $("nav").height();
+
+$('#schedule').css({'height': wh});
+$('#clearAbout, .fix').css({'height': offset});
+$('#clearSchedule').css({'height': offset/2});
+
+//capture click and properly verticaly position navbar. Sam Carecho
+function removeActive() {
+    $('#aboutLink').removeClass('active');
+    $('#programLink').removeClass('active');
+}
+
+//scroll links
+$("#aboutLink").click(function(){
+    removeActive();   
+    $('html, body').animate({
+        scrollTop: $("#clearAbout").offset().top
+    }, 800);
+    $('#aboutLink').addClass('active');
+    
+});
+$("#scheduleLink").click(function(){
+    removeActive();                  
+    $('html, body').animate({
+        scrollTop: $("#clearSchedule").offset().top
+    }, 800);
+    $('#scheduleLink').addClass('active');
+    
+});
+
+var mapW = $('.map').innerWidth();
+var mapH = $('.map').innerHeight();
+$('#map_canvas').css({ 
+	height: mapH,
+	width: mapW
+});
+
+var mapOptions = {
+  zoom: 15,
+  center: new google.maps.LatLng(-23.586938, -46.682153),
+  mapTypeId: google.maps.MapTypeId.ROADMAP,
+  streetViewControl: false,
+  panControl: false,
+  scrollwheel: false,
+  mapTypeControl: false,
+  zoomControl: true,
+  draggable: false,
+  scaleControl: false
+};
+
+var map = new google.maps.Map(document.getElementById("map_canvas"),
+    mapOptions);
+    
+var marker = new google.maps.Marker({
+    position: new google.maps.LatLng(-23.586938, -46.682153),
+    map: map,
+});
 
 

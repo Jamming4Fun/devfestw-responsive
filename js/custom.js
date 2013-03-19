@@ -98,28 +98,41 @@ $(function(){
   });  
 });*/
 
+//Window Dimensions
+var wh = $(window).height();
+var ww = $(window).width();
+$(window).resize(function(event) {
+	var ww = $(window).width();
+});
+
 
 // Ajusta o menu, sempre visivel
 var fixamenu = $('.fix').offset().top;
-var navbarWidth = $('.wrapper').width();
+if (ww > 650){
+	var navbarWidth = $('.wrapper').width();
+}
+else {
+	var navbarWidth = $(window).width();
+}
+
+$(window).resize(function(event) {
+	var navbarWidth = $('.wrapper').width();
+	$('.navigation').css({'width': navbarWidth});
+});
+
 $(window).scroll(function(){
   if( $(window).scrollTop() > fixamenu) {
       $('.navigation').css({position: 'fixed', width: navbarWidth+'px', top: '0px', zIndex: '99'});
         // Nao fixa a barra se for dispositivo movel
         if(window.innerWidth < 650){
-            $('.navigation').css({position: 'static', top: '0px'});
+            $('.navigation').css({position: 'static', width: navbarWidth+'px', top: '0px'});
         }
         // Nao fixa a barra se for dispositivo movel
   } else {
-      $('.navigation').css({position: 'static', top: '0px'});
+      $('.navigation').css({position: 'static', width: navbarWidth+'px', top: '0px'});
   }
 });
 
-
-
-//Window Dimensions
-var wh = $(window).height();
-var ww = $(window).width();
 var offset = $("nav").height();
 
 $('#schedule').css({'height': wh});
